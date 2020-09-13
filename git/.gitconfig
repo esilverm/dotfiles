@@ -1,0 +1,42 @@
+[user]
+	name = Evan Silverman
+	email = es4753@nyu.edu
+	signingkey = B846DC7C4B322682
+[credential]
+	helper = osxkeychain
+[pager]
+	branch = false
+	tag = false
+[log]
+	graph = true
+	oneline = true
+[alias]
+	l = log --graph --oneline
+	co = commit -m
+	fwd = "!f() { \
+		  git checkout $(git rev-list --topo-order HEAD..\"$*\" | tail -1); \
+		}; f"
+	back = checkout HEAD~1
+	ca = commit --amend -m
+	s = status
+	graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%C(blue)%x20(%ce)%x20%C(cyan)%C(reset)%n%x20%s%n"
+[core]
+	excludesfile = ~/.gitignore
+[color]
+	ui = auto
+	trustctime = false
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[commit]
+	# https://help.github.com/articles/signing-commits-using-gpg/
+	gpgsign = true
+[help]
+	# Autocorrect commands because sometimes im a dummy
+	autocorrect = 1
