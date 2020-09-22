@@ -1,20 +1,38 @@
+" My vim config
 
-" Install Vim Plug
-" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 set runtimepath+=~/.vim/
 
-if empty(glob('~/.vim/autoload/plug.vim'))
+" Download vim plug
+" https://github.com/xero/dotfiles/blob/fd11fe51c7e929d9bbc65efcc00181a126a064c0/vim/.vim/plugins.vim#L19
+if empty(glob('~/.vim/autoload/plug.vim))
   silent call system('mkdir -p ~/.vim/{autoload,bundle,cache,undo,backups,swaps}')
   silent call system('curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim')
-  execute 'source  ~/.vim/autoload/plug.vim'
+  execute 'source ~/.vim/autoload/plug.vim'
   augroup plugsetup
     au!
     autocmd VimEnter * PlugInstall
-  augroup end
-endif
+  augroup
+end
 
-call plug#begin('~/.vim/plugged')
+call plug#begin("~/.vim/plugged")
 
-" list of plugins i want to add
+" Theming
+Plug 'arcticicestudio/nord-vim'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 
+" Development
+Plug 'tpope/vim-fugitive'  " vim git integration
+Plug 'w0rp/ale'  " vim linting
+Plug 'chrisbra/colorizer' " colorize hex codes
+Plug 'neoclide/coc.nvim', {'branch': 'release'}  " vim intellisense
+
+" Install javascript and related language syntax support
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+" Plug 'fleischie/vim-styled-components'
+Plug 'jparise/vim-graphql'
+  
 call plug#end()
+"Config Section
