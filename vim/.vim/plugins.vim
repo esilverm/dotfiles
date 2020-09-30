@@ -24,7 +24,10 @@ Plug 'vim-airline/vim-airline'
 
 " Development
 Plug 'tpope/vim-fugitive'  " vim git integration
-Plug 'w0rp/ale'  " vim linting
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }  " vim linting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " vim intellisense
 
 " Install javascript and related language syntax support
