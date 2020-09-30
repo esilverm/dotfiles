@@ -26,9 +26,13 @@
 	ui = auto
 	trustctime = false
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+	added = "green bold"
+	changed = "yellow bold"
+  header = "white ul"
+  nobranch = "magenta bold ul"
+  unmerged = "blue ul"
+  unntracked = "red bold"
+  updated = "cyan bold"
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
