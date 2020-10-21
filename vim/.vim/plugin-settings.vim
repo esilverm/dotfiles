@@ -19,9 +19,9 @@ let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 let NERDTreeQuitOnOpen=1
 
-" linting
-let g:ale_completion_enabled = 1
-let g:ale_sign_column_always = 1
-
-" customize statusbar
-
+" Autoformatting
+let s:configfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\" -style=file'"
+let s:noconfigfile_def = "'clang-format -lines='.a:firstline.':'.a:lastline.' --assume-filename=\"'.expand('%:p').'\"'"
+let g:formatdef_clangformat = "g:ClangFormatConfigFileExists() ? (" . s:configfile_def . ") : (" . s:noconfigfile_def . ")"
+let g:formatters_java = ['clangformat']
+let g:formatters_javascript = ['prettier', 'clangformat']

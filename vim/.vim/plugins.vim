@@ -24,16 +24,21 @@ Plug 'vim-airline/vim-airline'
 
 " Development
 Plug 'tpope/vim-fugitive'  " vim git integration
+Plug 'neoclide/coc.nvim', {'branch': 'release'}  " vim intellisense
+Plug 'Chiel92/vim-autoformat'
+Plug 'sheerun/vim-polyglot'
+Plug 'plasticboy/vim-markdown'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
-    \ }  " vim linting
-Plug 'neoclide/coc.nvim', {'branch': 'release'}  " vim intellisense
+    \ }
+
 
 " Install javascript and related language syntax support
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'jparise/vim-graphql'
-  
+
+" Install Java 
 call plug#end()
