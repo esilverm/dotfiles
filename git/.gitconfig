@@ -19,6 +19,8 @@
 	back = checkout HEAD~1
 	ca = commit --amend -m
 	s = status
+	rb = rebase -i
+	pf = push -f --no-verify
 	graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%C(blue)%x20(%ce)%x20%C(cyan)%C(reset)%n%x20%s%n"
 [core]
 	excludesfile = ~/.gitignore
@@ -44,3 +46,5 @@
 [help]
 	# Autocorrect commands because sometimes im a dummy
 	autocorrect = 1
+[init]
+	defaultBranch = main
