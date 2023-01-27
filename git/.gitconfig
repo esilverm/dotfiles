@@ -1,7 +1,6 @@
 [user]
 	name = Evan Silverman
 	email = es4753@nyu.edu
-	signingkey = B846DC7C4B322682
 [credential]
 	helper = osxkeychain
 [pager]
@@ -40,9 +39,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[commit]
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
 [help]
 	# Autocorrect commands because sometimes im a dummy
 	autocorrect = 1
