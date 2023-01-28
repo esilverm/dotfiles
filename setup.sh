@@ -19,6 +19,13 @@ mkdir $HOME/.nvm
 # Setup git lfs
 git lfs install
 
+# Stow dotfiles
+cd $HOME/.dotfiles
+stow git
+stow tmux
+stow vim
+cd $HOME
+
 # Setup powerlevel10k and zsh related stuff last because it requires you to reload the terminal
 echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> $HOME/.zshrc
 echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >> $HOME/.zshrc
